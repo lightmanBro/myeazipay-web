@@ -20,7 +20,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 // Error handling link for 429 rate limit errors and other errors
-const errorLink = onError(({ graphQLErrors, networkError, operation, forward }) => {
+const errorLink = onError(({ graphQLErrors, networkError}) => {
   if (networkError) {
     const statusCode = (networkError as any).statusCode;
     
