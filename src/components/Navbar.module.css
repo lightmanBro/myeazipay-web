@@ -1,0 +1,157 @@
+.navbar {
+  @apply bg-white shadow-md sticky top-0 z-50 border-b border-gray-100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.navbarContainer {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply flex items-center justify-between h-20 gap-4;
+}
+
+.logo {
+  @apply text-primary-700 font-bold text-2xl tracking-tight;
+  @apply hover:text-primary-800 transition-colors;
+  @apply flex items-center gap-3;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logoIcon {
+  @apply w-10 h-10 rounded-lg;
+  background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.navMenu {
+  @apply hidden md:flex items-center gap-1 ml-8;
+}
+
+.navLink {
+  @apply px-4 py-2 rounded-lg text-sm font-semibold text-gray-700;
+  @apply hover:text-primary-700 hover:bg-gray-50 transition-all duration-200;
+  @apply relative;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  transform: translateY(-1px);
+}
+
+/* Active link styling */
+.navLink.active {
+  @apply text-primary-700 bg-primary-50;
+  @apply font-bold;
+}
+
+.spacer {
+  @apply flex-1;
+}
+
+.userSection {
+  @apply flex items-center gap-4;
+}
+
+.userProfile {
+  @apply hidden sm:flex items-center gap-3 px-3 py-2 rounded-lg;
+  @apply hover:bg-gray-50 transition-colors cursor-pointer;
+}
+
+.avatar {
+  @apply w-11 h-11 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white;
+  @apply flex items-center justify-center font-semibold text-sm;
+  @apply shadow-sm ring-2 ring-primary-100;
+}
+
+.userName {
+  @apply text-sm font-semibold text-gray-800;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iconButton {
+  @apply w-9 h-9 rounded-lg flex items-center justify-center;
+  @apply text-gray-500 hover:bg-gray-100 hover:text-primary-700;
+  @apply transition-all duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  @apply relative;
+}
+
+.iconButton:hover {
+  transform: translateY(-1px);
+}
+
+.icon {
+  @apply w-5 h-5;
+}
+
+.iconButton:active {
+  transform: translateY(0);
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  @apply md:hidden w-10 h-10 rounded-lg flex items-center justify-center;
+  @apply text-gray-600 hover:bg-gray-100 hover:text-primary-700;
+  @apply transition-all duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+/* Mobile Menu Dropdown */
+.mobileMenu {
+  @apply md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200;
+  @apply shadow-lg z-50;
+  @apply flex flex-col;
+}
+
+.mobileNavLink {
+  @apply px-6 py-4 text-sm font-semibold text-gray-700;
+  @apply hover:text-primary-700 hover:bg-gray-50 transition-all duration-200;
+  @apply border-b border-gray-100 last:border-b-0;
+  text-decoration: none;
+}
+
+.mobileNavLink.active {
+  @apply text-primary-700 bg-primary-50;
+  @apply font-bold;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .navMenu {
+    @apply hidden;
+  }
+  
+  .navbarContainer {
+    @apply relative;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbarContainer {
+    @apply px-3 h-16;
+  }
+  
+  .logo {
+    @apply text-xl;
+  }
+  
+  .logoIcon {
+    @apply w-8 h-8;
+  }
+  
+  .userProfile {
+    @apply hidden;
+  }
+  
+  .iconButton {
+    @apply w-8 h-8;
+  }
+  
+  .icon {
+    @apply w-4 h-4;
+  }
+}
+

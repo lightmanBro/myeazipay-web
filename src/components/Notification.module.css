@@ -1,0 +1,99 @@
+.notification {
+  @apply max-w-md;
+  @apply bg-white rounded-xl shadow-2xl border-2;
+  @apply transform transition-all duration-300 ease-out;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.notification.error {
+  @apply border-red-300 bg-red-50;
+}
+
+.notification.warning {
+  @apply border-yellow-300 bg-yellow-50;
+}
+
+.notification.info {
+  @apply border-blue-300 bg-blue-50;
+}
+
+.notification.success {
+  @apply border-green-300 bg-green-50;
+}
+
+.notificationContent {
+  @apply flex items-start gap-4 p-5;
+}
+
+.notificationIcon {
+  @apply w-6 h-6 flex-shrink-0 mt-0.5;
+}
+
+.notification.error .notificationIcon {
+  @apply text-red-600;
+}
+
+.notification.warning .notificationIcon {
+  @apply text-yellow-600;
+}
+
+.notification.info .notificationIcon {
+  @apply text-blue-600;
+}
+
+.notification.success .notificationIcon {
+  @apply text-green-600;
+}
+
+.notificationMessage {
+  @apply flex-1 text-sm font-medium;
+}
+
+.notification.error .notificationMessage {
+  @apply text-red-800;
+}
+
+.notification.warning .notificationMessage {
+  @apply text-yellow-800;
+}
+
+.notification.info .notificationMessage {
+  @apply text-blue-800;
+}
+
+.notification.success .notificationMessage {
+  @apply text-green-800;
+}
+
+.notificationClose {
+  @apply w-5 h-5 flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity;
+  @apply cursor-pointer;
+}
+
+.notification.error .notificationClose {
+  @apply text-red-600;
+}
+
+.notification.warning .notificationClose {
+  @apply text-yellow-600;
+}
+
+.notification.info .notificationClose {
+  @apply text-blue-600;
+}
+
+.notification.success .notificationClose {
+  @apply text-green-600;
+}
+

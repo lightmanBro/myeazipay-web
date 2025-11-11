@@ -1,0 +1,175 @@
+.pageContainer {
+  @apply min-h-screen py-12 px-4 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50;
+}
+
+.formCard {
+  @apply max-w-2xl mx-auto bg-white rounded-3xl shadow-2xl p-10;
+  @apply border border-gray-100;
+  transition: all 0.3s ease;
+}
+
+.formCard:hover {
+  @apply shadow-2xl;
+  transform: translateY(-2px);
+}
+
+.formHeader {
+  @apply mb-10 text-center;
+}
+
+.formTitle {
+  @apply text-4xl font-bold text-gray-900 mb-3;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.formSubtitle {
+  @apply text-gray-600 text-lg;
+}
+
+.errorAlert {
+  @apply mb-6 p-5 bg-red-50 border-2 border-red-200 rounded-xl;
+  @apply flex items-center gap-3 text-red-700 shadow-sm;
+}
+
+.alertIcon {
+  @apply w-6 h-6 flex-shrink-0;
+}
+
+.successAlert {
+  @apply mb-6 p-5 bg-green-50 border-2 border-green-200 rounded-xl;
+  @apply flex items-center gap-3 text-green-700 shadow-sm;
+}
+
+.successIcon {
+  @apply w-6 h-6 flex-shrink-0;
+}
+
+.form {
+  @apply space-y-7;
+}
+
+.formGroup {
+  @apply space-y-2.5;
+}
+
+.formLabel {
+  @apply block text-sm font-semibold text-gray-700 mb-2;
+  @apply uppercase tracking-wide;
+}
+
+.formInput {
+  @apply w-full px-5 py-4 rounded-xl border-2 border-gray-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+  @apply transition-all duration-200 bg-white;
+  @apply placeholder-gray-400 font-medium;
+}
+
+.formInput:hover {
+  @apply border-gray-300;
+}
+
+.formSelect {
+  @apply w-full px-5 py-4 rounded-xl border-2 border-gray-200 bg-white;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+  @apply transition-all duration-200 font-medium;
+  @apply cursor-pointer;
+}
+
+.formSelect:hover {
+  @apply border-gray-300;
+}
+
+.primaryButton {
+  @apply w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 rounded-xl font-semibold;
+  @apply hover:from-primary-700 hover:to-primary-800 transition-all duration-200;
+  @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply flex items-center justify-center shadow-lg;
+  @apply hover:shadow-xl hover:scale-105 active:scale-100;
+  @apply mt-6;
+}
+
+.buttonLoading {
+  @apply flex items-center gap-3;
+}
+
+.spinner {
+  @apply w-5 h-5 border-2 border-white border-t-transparent rounded-full;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.successContainer {
+  @apply space-y-7;
+}
+
+.walletInfo {
+  @apply space-y-5 p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl;
+  @apply border-2 border-gray-200;
+}
+
+.infoGroup {
+  @apply space-y-3;
+}
+
+.infoLabel {
+  @apply block text-sm font-semibold text-gray-700 uppercase tracking-wide;
+}
+
+.infoValue {
+  @apply text-base text-gray-900 font-semibold;
+}
+
+.infoRow {
+  @apply flex items-center justify-between py-2;
+  @apply border-b border-gray-200 last:border-b-0;
+}
+
+.addressBox {
+  @apply flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200;
+  @apply hover:border-primary-300 transition-colors;
+}
+
+.addressCode {
+  @apply flex-1 text-sm font-mono text-gray-800 break-all;
+  @apply font-semibold;
+}
+
+.copyButton {
+  @apply p-2.5 rounded-xl hover:bg-gray-100 text-gray-600 hover:text-primary-700;
+  @apply transition-all flex-shrink-0 hover:scale-110 active:scale-100;
+  @apply border border-gray-200 hover:border-primary-300;
+}
+
+.networkValue {
+  @apply inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-primary-100 to-primary-200;
+  @apply text-primary-700 text-sm font-bold border border-primary-300;
+  @apply shadow-sm;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .pageContainer {
+    @apply py-8;
+  }
+  
+  .formCard {
+    @apply p-6 rounded-2xl;
+  }
+  
+  .formTitle {
+    @apply text-3xl;
+  }
+  
+  .formSubtitle {
+    @apply text-base;
+  }
+}

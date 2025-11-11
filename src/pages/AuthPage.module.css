@@ -1,0 +1,279 @@
+.authContainer {
+  @apply min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden;
+  @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+  position: relative;
+}
+
+.decorativeElements {
+  @apply absolute inset-0 overflow-hidden pointer-events-none;
+}
+
+.circle1 {
+  @apply absolute top-20 left-10 w-72 h-72 rounded-full;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 100%);
+  filter: blur(60px);
+  animation: float 20s ease-in-out infinite;
+}
+
+.circle2 {
+  @apply absolute bottom-20 right-10 w-96 h-96 rounded-full;
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%);
+  filter: blur(80px);
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.circle3 {
+  @apply absolute top-1/2 left-1/2 w-64 h-64 rounded-full;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%);
+  filter: blur(70px);
+  transform: translate(-50%, -50%);
+  animation: pulse 15s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+.authCard {
+  @apply w-full max-w-md bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-10 relative z-10;
+  @apply border border-white/50;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(59, 130, 246, 0.05);
+}
+
+.authCard:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+.authHeader {
+  @apply text-center mb-10;
+}
+
+.logoContainer {
+  @apply flex justify-center mb-6;
+}
+
+.logoIcon {
+  @apply w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700;
+  @apply flex items-center justify-center text-white shadow-lg;
+  @apply transform rotate-3 hover:rotate-0 transition-transform duration-300;
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+}
+
+.logoIcon svg {
+  @apply w-8 h-8;
+}
+
+.authTitle {
+  @apply text-5xl font-extrabold text-gray-900 mb-3;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.authSubtitle {
+  @apply text-gray-600 text-lg font-medium;
+}
+
+.errorAlert {
+  @apply mb-6 p-4 bg-red-50/90 backdrop-blur-sm border-2 border-red-200 rounded-xl;
+  @apply flex items-center gap-3 text-red-700 shadow-sm;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.alertIcon {
+  @apply w-5 h-5 flex-shrink-0;
+}
+
+.authForm {
+  @apply space-y-6;
+}
+
+.formGroup {
+  @apply space-y-3;
+}
+
+.formLabel {
+  @apply flex items-center gap-2 text-sm font-bold text-gray-700 mb-3;
+  @apply uppercase tracking-wider;
+}
+
+.labelIcon {
+  @apply w-4 h-4 text-primary-600;
+}
+
+.inputWrapper {
+  @apply relative;
+}
+
+.inputIcon {
+  @apply absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400;
+  @apply pointer-events-none transition-colors;
+}
+
+.formInput {
+  @apply w-full pl-12 pr-5 py-4 rounded-xl border-2 border-gray-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+  @apply transition-all duration-200 bg-white/50 backdrop-blur-sm;
+  @apply placeholder-gray-400 font-medium text-gray-700;
+  @apply hover:border-gray-300 hover:bg-white;
+}
+
+.formInput:focus {
+  @apply bg-white border-primary-500;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.formInput:focus + .inputIcon,
+.inputWrapper:focus-within .inputIcon {
+  @apply text-primary-500;
+}
+
+.submitButton {
+  @apply w-full bg-gradient-to-r from-primary-600 via-primary-600 to-primary-700 text-white py-4 rounded-xl font-bold text-lg;
+  @apply hover:from-primary-700 hover:via-primary-700 hover:to-primary-800 transition-all duration-300;
+  @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  @apply flex items-center justify-center gap-3 shadow-xl;
+  @apply hover:shadow-2xl hover:scale-105 active:scale-100;
+  @apply mt-4 relative overflow-hidden;
+  position: relative;
+}
+
+.submitButton::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.submitButton:hover::before {
+  transform: translateX(100%);
+}
+
+.buttonLoading {
+  @apply flex items-center gap-3;
+}
+
+.spinner {
+  @apply w-5 h-5 border-2 border-white border-t-transparent rounded-full;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.buttonIcon {
+  @apply w-5 h-5 transition-transform;
+}
+
+.submitButton:hover .buttonIcon {
+  transform: translateX(4px);
+}
+
+.authFooter {
+  @apply mt-8 text-center pt-6 border-t border-gray-200/50;
+}
+
+.footerText {
+  @apply text-gray-600 text-sm font-medium;
+}
+
+.footerLink {
+  @apply text-primary-600 hover:text-primary-700 font-bold transition-all;
+  @apply hover:underline relative;
+  position: relative;
+}
+
+.footerLink::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600;
+  transition: width 0.3s ease;
+}
+
+.footerLink:hover::after {
+  @apply w-full;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .authContainer {
+    @apply py-6;
+  }
+  
+  .authCard {
+    @apply p-8 rounded-2xl;
+  }
+  
+  .authTitle {
+    @apply text-4xl;
+  }
+  
+  .logoIcon {
+    @apply w-14 h-14;
+  }
+  
+  .logoIcon svg {
+    @apply w-7 h-7;
+  }
+  
+  .circle1,
+  .circle2,
+  .circle3 {
+    @apply hidden;
+  }
+}
+
+/* Additional polish */
+.authCard::before {
+  content: '';
+  @apply absolute inset-0 rounded-3xl;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.authCard:hover::before {
+  opacity: 1;
+}
