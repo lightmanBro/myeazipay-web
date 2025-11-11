@@ -5,7 +5,7 @@ import { showRateLimitNotification } from '../utils/notifications';
 import Cookies from 'js-cookie';
 
 const httpLink = createHttpLink({
-  uri: import.meta.env.VITE_GRAPHQL_URL || 'http://localhost:4000/graphql',
+  uri: import.meta.env.VITE_GRAPHQL_URL,
 });
 
 const authLink = setContext((_, { headers }) => {
