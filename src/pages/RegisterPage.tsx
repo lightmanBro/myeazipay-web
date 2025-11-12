@@ -52,7 +52,7 @@ function RegisterPage() {
         navigate('/dashboard');
       }
     } catch (err: any) {
-      setError(err.message || 'Registration failed');
+      setError(`${err.message}😥 we are fixing data migration issues on production, please clone repository and run the app in development mode.` || 'Registration failed');
     }
   };
 
